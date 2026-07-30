@@ -48,7 +48,7 @@ def rose_approval():
     key = hashlib.md5(uuid_raw.encode()).hexdigest().upper()[:12]
     
     # Yahan apni GitHub link lagayein jahan approved keys hongi
-    github_link = "https://github.com/bayezidbostami404/ROSE-A"
+    github_link = "https://github.com/bayezidbostami404/ROSE-A/blob/main/Approval-3"
     
         print('''\033[1;32m ┌──────────────────────────────────────┐\033[0m
 \033[1;31m │ \033[1;32m██████╗  ██████╗ ███████╗███████╗\033[1;31m   │
