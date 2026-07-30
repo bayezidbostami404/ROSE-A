@@ -50,7 +50,7 @@ def rose_approval():
     # Yahan apni GitHub link lagayein jahan approved keys hongi
     github_link = "https://github.com/bayezidbostami404/ROSE-A/blob/main/Approval-3"
     
-        print('''\033[1;32m ┌──────────────────────────────────────┐\033[0m
+    print('''\033[1;32m ┌──────────────────────────────────────┐\033[0m
 \033[1;31m │ \033[1;32m██████╗  ██████╗ ███████╗███████╗\033[1;31m   │
  │ \033[1;33m██╔══██╗██╔══██╗██╔════╝██╔════╝\033[1;31m   │
  │ \033[1;34m██████╔╝██║  ██║███████╗█████╗  \033[1;31m   │
