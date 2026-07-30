@@ -50,7 +50,7 @@ def raja_approval():
     
     # Yahan apni GitHub link lagayein jahan approved keys hongi
     # Format: Raw text file on GitHub
-    github_link ="https://github.com/bayezidbostami404/ROSE-A"
+    github_link ="https://github.com/bayezidbostami404/ROSE-A/blob/main/Approval-3"
     
     print('''
 \033[1;31m ██████╗  █████╗      ██╗ █████\x1b[0m╗ 
